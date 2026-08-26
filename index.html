@@ -1,9 +1,11 @@
+Alienway Construction — V2 index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alienway Construction | Building Cape Town</title>
+
+  <title>Alienway Construction | Cape Town</title>
 
   <style>
     * {
@@ -12,115 +14,236 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #111;
+      background: #0b0b0b;
       color: white;
       line-height: 1.6;
     }
 
     header {
-      background: #111;
-      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10,10,10,0.95);
+      padding: 18px 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #292929;
     }
 
     .logo {
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 1px;
     }
 
-    .logo span {
+    .logo span,
+    .gold {
       color: #f5b400;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 15px;
+      margin-left: 20px;
       font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f5b400;
     }
 
     .hero {
-      min-height: 80vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
-      padding: 60px 25px;
+      padding: 70px 25px;
       background:
-        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)),
-        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80")
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.82)),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=80")
         center/cover;
     }
 
     .hero-content {
-      max-width: 700px;
+      max-width: 850px;
+    }
+
+    .tag {
+      color: #f5b400;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 8vw, 75px);
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #f5b400;
+      font-size: clamp(48px, 9vw, 88px);
+      line-height: .95;
+      margin-bottom: 25px;
+      font-weight: 900;
     }
 
     .hero p {
-      font-size: 18px;
+      font-size: 19px;
       color: #ddd;
-      margin-bottom: 30px;
-      max-width: 600px;
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .button {
       display: inline-block;
       background: #f5b400;
       color: #111;
-      padding: 14px 24px;
+      padding: 15px 25px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 900;
       border-radius: 5px;
     }
 
+    .button.dark {
+      background: transparent;
+      color: white;
+      border: 1px solid #777;
+    }
+
     section {
-      padding: 70px 25px;
+      padding: 80px 25px;
       max-width: 1100px;
       margin: auto;
     }
 
     .section-title {
-      font-size: 38px;
-      margin-bottom: 35px;
+      font-size: clamp(32px, 6vw, 48px);
+      margin-bottom: 15px;
+      line-height: 1.1;
     }
 
-    .section-title span {
-      color: #f5b400;
+    .section-intro {
+      color: #aaa;
+      max-width: 650px;
+      margin-bottom: 40px;
     }
 
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      gap: 18px;
     }
 
     .card {
-      background: #1c1c1c;
-      padding: 28px;
-      border: 1px solid #333;
+      background: #171717;
+      padding: 30px;
+      border: 1px solid #2d2d2d;
       border-radius: 8px;
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #f5b400;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 18px;
     }
 
     .card h3 {
       color: #f5b400;
       margin-bottom: 10px;
+      font-size: 21px;
     }
 
     .card p {
-      color: #bbb;
+      color: #aaa;
+    }
+
+    .projects {
+      background: #121212;
+      max-width: none;
+    }
+
+    .projects-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 230px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border-radius: 8px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.9));
+    }
+
+    .project-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project h3 {
+      margin-bottom: 5px;
+    }
+
+    .demo {
+      display: inline-block;
+      color: #f5b400;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .why {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .why-box {
+      padding: 25px;
+      border-left: 3px solid #f5b400;
+      background: #151515;
+    }
+
+    .why-box h3 {
+      margin-bottom: 8px;
+    }
+
+    .why-box p {
+      color: #aaa;
     }
 
     .about {
@@ -133,30 +256,81 @@
       margin: auto;
     }
 
+    .about p {
+      color: #bbb;
+      max-width: 750px;
+      font-size: 18px;
+    }
+
+    .location {
+      margin-top: 35px;
+      padding: 30px;
+      background: #151515;
+      border: 1px solid #2d2d2d;
+      border-radius: 8px;
+    }
+
     .contact {
       text-align: center;
     }
 
     .contact p {
-      color: #bbb;
-      margin-bottom: 25px;
+      color: #aaa;
+      margin: 15px auto 30px;
+      max-width: 600px;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
-      background: #080808;
-      color: #777;
-      font-size: 14px;
+      padding: 30px 20px;
+      background: #050505;
+      color: #666;
+      font-size: 13px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 5px 20px rgba(0,0,0,.5);
     }
 
     @media (max-width: 600px) {
+      header {
+        padding: 15px 18px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
       nav {
         display: none;
       }
 
       .hero {
-        min-height: 75vh;
+        min-height: 82vh;
+        padding: 60px 20px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+
+      .whatsapp {
+        right: 15px;
+        bottom: 15px;
       }
     }
   </style>
@@ -165,10 +339,13 @@
 <body>
 
 <header>
-  <div class="logo">ALIENWAY <span>CONSTRUCTION</span></div>
+  <div class="logo">
+    ALIENWAY <span>CONSTRUCTION</span>
+  </div>
 
   <nav>
     <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -176,81 +353,223 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1>WE BUILD.<br><span>YOU GROW.</span></h1>
+
+    <div class="tag">CAPE TOWN • CONSTRUCTION • BUILDING</div>
+
+    <h1>
+      WE BUILD.<br>
+      <span class="gold">YOU GROW.</span>
+    </h1>
 
     <p>
-      Professional construction and building solutions
-      for homes and businesses across Cape Town.
+      Construction, renovations and property improvement
+      solutions for homes and businesses across Cape Town.
     </p>
 
-    <a class="button" href="#contact">GET A QUOTE</a>
+    <div class="buttons">
+      <a class="button" href="#contact">GET A QUOTE</a>
+      <a class="button dark" href="#projects">VIEW PROJECTS</a>
+    </div>
+
   </div>
 </section>
 
 <section id="services">
-  <h2 class="section-title">Our <span>Services</span></h2>
+
+  <h2 class="section-title">
+    Our <span class="gold">Services</span>
+  </h2>
+
+  <p class="section-intro">
+    Practical construction solutions designed around your
+    property, project and goals.
+  </p>
 
   <div class="services">
 
     <div class="card">
+      <div class="icon">🏠</div>
       <h3>Residential</h3>
       <p>
-        Building, renovations and improvements for homes.
+        Building, extensions, improvements and renovation
+        solutions for homes.
       </p>
     </div>
 
     <div class="card">
+      <div class="icon">🏢</div>
       <h3>Commercial</h3>
       <p>
-        Construction solutions for businesses and commercial spaces.
+        Construction solutions for businesses, offices
+        and commercial spaces.
       </p>
     </div>
 
     <div class="card">
+      <div class="icon">🔨</div>
       <h3>Renovations</h3>
       <p>
-        Transforming existing spaces with quality workmanship.
+        Transforming existing spaces with practical
+        construction and renovation work.
       </p>
     </div>
 
     <div class="card">
+      <div class="icon">🛠️</div>
       <h3>Maintenance</h3>
       <p>
-        Reliable maintenance and repair services for your property.
+        Property maintenance, repairs and improvement
+        services.
       </p>
     </div>
 
   </div>
+
+</section>
+
+<section class="projects" id="projects">
+
+  <div class="projects-inner">
+
+    <h2 class="section-title">
+      Project <span class="gold">Showcase</span>
+    </h2>
+
+    <p class="section-intro">
+      Example project concepts demonstrating the type of
+      work Alienway Construction can showcase.
+    </p>
+
+    <div class="project-grid">
+
+      <div class="project"
+        style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80');">
+
+        <div class="project-content">
+          <span class="demo">DEMO PROJECT</span>
+          <h3>Modern Home Renovation</h3>
+          <p>Residential improvement concept.</p>
+        </div>
+
+      </div>
+
+      <div class="project"
+        style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80');">
+
+        <div class="project-content">
+          <span class="demo">DEMO PROJECT</span>
+          <h3>Commercial Interior</h3>
+          <p>Business space improvement concept.</p>
+        </div>
+
+      </div>
+
+      <div class="project"
+        style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80');">
+
+        <div class="project-content">
+          <span class="demo">DEMO PROJECT</span>
+          <h3>Property Upgrade</h3>
+          <p>Renovation and maintenance concept.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="section-title">
+    Why <span class="gold">Alienway?</span>
+  </h2>
+
+  <p class="section-intro">
+    A professional approach focused on reliable work,
+    clear communication and quality results.
+  </p>
+
+  <div class="why">
+
+    <div class="why-box">
+      <h3>Quality Focus</h3>
+      <p>
+        Attention to detail from planning through completion.
+      </p>
+    </div>
+
+    <div class="why-box">
+      <h3>Professional</h3>
+      <p>
+        Clear communication and a straightforward approach.
+      </p>
+    </div>
+
+    <div class="why-box">
+      <h3>Local</h3>
+      <p>
+        Serving clients and properties across Cape Town.
+      </p>
+    </div>
+
+  </div>
+
 </section>
 
 <section class="about" id="about">
+
   <div class="about-inner">
-    <h2 class="section-title">Built With <span>Purpose</span></h2>
+
+    <h2 class="section-title">
+      Built With <span class="gold">Purpose</span>
+    </h2>
 
     <p>
       Alienway Construction is focused on delivering dependable
-      construction solutions with quality, professionalism and
-      attention to detail.
+      construction and property improvement solutions with
+      professionalism, quality and attention to detail.
     </p>
+
+    <div class="location">
+      <h3>📍 Cape Town, South Africa</h3>
+      <p>
+        Construction and property services for residential
+        and commercial clients.
+      </p>
+    </div>
+
   </div>
+
 </section>
 
 <section class="contact" id="contact">
-  <h2 class="section-title">Let's <span>Build</span></h2>
+
+  <h2 class="section-title">
+    Let's <span class="gold">Build.</span>
+  </h2>
 
   <p>
-    Ready to start your next project?
-    Get in touch with our team today.
+    Have a project in mind? Contact Alienway Construction
+    to discuss your requirements and request a quote.
   </p>
 
   <a class="button" href="https://wa.me/27000000000">
-    WHATSAPP US
+    💬 WHATSAPP US
   </a>
+
 </section>
+
+<a class="whatsapp" href="https://wa.me/27000000000">
+  💬 WhatsApp
+</a>
 
 <footer>
   © 2026 Alienway Construction. All rights reserved.
 </footer>
 
 </body>
+
 </html>
