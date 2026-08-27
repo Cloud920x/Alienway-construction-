@@ -542,7 +542,62 @@
   </div>
 
 </section>
+<section id="quote">
 
+  <h2 class="section-title">
+    Request a <span class="gold">Quote</span>
+  </h2>
+
+  <p class="section-intro">
+    Tell us a little about your project and we'll get back to you.
+  </p>
+
+  <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST">
+
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+    >
+
+    <input
+      type="tel"
+      name="phone"
+      placeholder="WhatsApp / Phone Number"
+      required
+    >
+
+    <input
+      type="text"
+      name="area"
+      placeholder="Area in Cape Town"
+      required
+    >
+
+    <select name="project_type" required>
+      <option value="">Type of Project</option>
+      <option>Residential</option>
+      <option>Commercial</option>
+      <option>Renovation</option>
+      <option>Maintenance</option>
+      <option>Other</option>
+    </select>
+
+    <textarea
+      name="message"
+      rows="6"
+      placeholder="Tell us about the work you need..."
+      required
+    ></textarea>
+
+    <button class="button" type="submit">
+      SEND QUOTE REQUEST
+    </button>
+
+  </form>
+
+</section>
 <section class="contact" id="contact">
 
   <h2 class="section-title">
