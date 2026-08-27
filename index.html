@@ -331,6 +331,62 @@
         bottom: 15px;
       }
     }
+    #quote {
+  max-width: 850px;
+  margin: auto;
+}
+
+#quote form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+#quote input,
+#quote select,
+#quote textarea {
+  width: 100%;
+  padding: 18px;
+  background: #171717;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 7px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+#quote input:focus,
+#quote select:focus,
+#quote textarea:focus {
+  outline: none;
+  border-color: #f5b400;
+}
+
+#quote textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+#quote .button {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 18px;
+}
+
+@media (max-width: 600px) {
+  #quote {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #quote input,
+  #quote select,
+  #quote textarea {
+    padding: 17px;
+  }
+}
   </style>
 </head>
 
