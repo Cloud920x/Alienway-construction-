@@ -821,5 +821,23 @@
   © 2026 Alienway Construction. All rights reserved.
 </footer>
 
+  <script>
+  const whyBoxes = document.querySelectorAll('.why-box');
+
+  const whyObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  whyBoxes.forEach((box) => {
+    whyObserver.observe(box);
+  });
+  </script>
+
 </body>
 </html>
