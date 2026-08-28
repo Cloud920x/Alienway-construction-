@@ -484,6 +484,17 @@
   font-weight: bold;
   margin-bottom: 7px;
     }
+
+    .why-box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.why-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
   
   </style>
 </head>
