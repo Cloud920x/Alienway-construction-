@@ -951,6 +951,16 @@
   whyBoxes.forEach((box) => {
     whyObserver.observe(box);
   });
+
+    function openService(service) {
+  if (service === 'renovations') {
+    document.getElementById('service-modal').style.display = 'flex';
+  }
+}
+
+function closeService() {
+  document.getElementById('service-modal').style.display = 'none';
+}
   </script>
 
 </body>
