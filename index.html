@@ -971,9 +971,19 @@
 
     function openService(service) {
   if (service === 'renovations') {
-    document.getElementById('service-modal').classList.add('active');
+    document.getElementById('service-title').textContent = 'Renovations';
+    document.getElementById('service-description').textContent =
+      'Transforming existing spaces with practical renovation solutions designed around your property and goals.';
   }
-}
+
+  if (service === 'residential') {
+    document.getElementById('service-title').textContent = 'Residential';
+    document.getElementById('service-description').textContent =
+      'Building and improvement solutions for homes, extensions and residential properties.';
+  }
+
+  document.getElementById('service-modal').classList.add('active');
+    }
 
 function closeService() {
   document.getElementById('service-modal').classList.remove('active');
