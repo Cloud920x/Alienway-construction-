@@ -183,9 +183,31 @@
     }
 
     .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: #f5b400;
-  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  box-shadow: 0 15px 35px rgba(245,180,0,.12);
+}
+
+.card[onclick] {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card[onclick]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #f5b400;
+  transform: scaleY(0);
+  transition: transform .3s ease;
+}
+
+.card[onclick]:hover::before {
+  transform: scaleY(1);
 }
 
     .icon {
