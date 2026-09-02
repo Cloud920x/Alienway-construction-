@@ -1266,6 +1266,24 @@ max-height: 85vh;
 function closeService() {
   document.getElementById('service-modal').classList.remove('active');
 }
+
+    const trustSection = document.querySelector('.trust-section');
+const meters = document.querySelectorAll('.arc');
+
+window.addEventListener('scroll', () => {
+
+  const rect = trustSection.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  let progress = 1 - (rect.top / windowHeight);
+
+  progress = Math.max(0, Math.min(1, progress));
+
+  meters.forEach((meter) => {
+    meter.style.transform = `rotate(${-180 + (180 * progress)}deg)`;
+  });
+
+});
     
   </script>
 
