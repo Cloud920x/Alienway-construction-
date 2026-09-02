@@ -1102,32 +1102,65 @@ max-height: 85vh;
   });
 
     function openService(service) {
+
+  const title = document.getElementById('service-title');
+  const description = document.getElementById('service-description');
+  const list = document.getElementById('service-list');
+
   if (service === 'renovations') {
-    document.getElementById('service-title').textContent = 'Renovations';
-    document.getElementById('service-description').textContent =
-      'Transforming existing spaces with practical renovation solutions designed around your property and goals.';
+    title.textContent = 'Renovations';
+    description.textContent =
+    'Transforming existing spaces with practical renovation solutions designed around your property and goals.';
+
+    list.innerHTML = `
+      <li>Home renovations</li>
+      <li>Room upgrades</li>
+      <li>Property improvements</li>
+      <li>General renovation work</li>
+    `;
   }
 
   if (service === 'residential') {
-    document.getElementById('service-title').textContent = 'Residential';
-    document.getElementById('service-description').textContent =
-      'Building and improvement solutions for homes, extensions and residential properties.';
+    title.textContent = 'Residential';
+    description.textContent =
+    'Building and improvement solutions for homes, extensions and residential properties.';
+
+    list.innerHTML = `
+      <li>New home projects</li>
+      <li>Extensions</li>
+      <li>Home improvements</li>
+      <li>Property upgrades</li>
+    `;
   }
 
-      if (service === 'commercial') {
-  document.getElementById('service-title').textContent = 'Commercial';
-  document.getElementById('service-description').textContent =
+  if (service === 'commercial') {
+    title.textContent = 'Commercial';
+    description.textContent =
     'Construction solutions for businesses, offices and commercial spaces.';
-      }
 
-      if (service === 'maintenance') {
-  document.getElementById('service-title').textContent = 'Maintenance';
-  document.getElementById('service-description').textContent =
+    list.innerHTML = `
+      <li>Office improvements</li>
+      <li>Commercial spaces</li>
+      <li>Business renovations</li>
+      <li>Property upgrades</li>
+    `;
+  }
+
+  if (service === 'maintenance') {
+    title.textContent = 'Maintenance';
+    description.textContent =
     'Reliable property maintenance, repairs and improvement services for homes and businesses.';
-      }
+
+    list.innerHTML = `
+      <li>Repairs</li>
+      <li>Property maintenance</li>
+      <li>Improvements</li>
+      <li>General fixes</li>
+    `;
+  }
 
   document.getElementById('service-modal').classList.add('active');
-    }
+}
 
 function closeService() {
   document.getElementById('service-modal').classList.remove('active');
