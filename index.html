@@ -725,6 +725,78 @@ max-height: 85vh;
 .service-close:hover {
   color: #f5b400;
 }
+
+    .trust-section {
+  padding: 90px 25px;
+  background: #121212;
+}
+
+.trust-meter {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.meter {
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
+  width: 260px;
+  height: 130px;
+  border-radius: 260px 260px 0 0;
+  border: 12px solid #333;
+  border-bottom: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.word {
+  position: absolute;
+  bottom: 25px;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.word b:nth-child(1) {
+  color: #00aaff;
+}
+
+.word b:nth-child(2) {
+  color: #eeeeee;
+}
+
+.word b:nth-child(3) {
+  color: #00d26a;
+}
+
+.word b:nth-child(4) {
+  color: #ff8c00;
+}
+
+.word b:nth-child(5) {
+  color: #00aaff;
+}
+
+@media (max-width: 800px) {
+
+  .trust-meter {
+    grid-template-columns: 1fr;
+  }
+
+  .circle {
+    width: 280px;
+    height: 140px;
+  }
+
+}
   
   </style>
 </head>
