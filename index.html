@@ -1351,8 +1351,25 @@ window.addEventListener('scroll', () => {
 
     const letters = word.querySelectorAll('b');
 
-    let activeLetters = Math.floor(progress * letters.length);
+    let delay = 0;
 
+if (word.closest('.local-meter')) {
+  delay = 0;
+}
+
+if (word.closest('.professional-meter')) {
+  delay = 0.35;
+}
+
+if (word.closest('.quality-meter')) {
+  delay = 0.7;
+}
+
+let wordProgress = (progress - delay) / (1 - delay);
+
+wordProgress = Math.max(0, Math.min(1, wordProgress));
+
+let activeLetters = Math.floor(wordProgress * letters.length);
     letters.forEach((letter, index) => {
 
       letter.classList.toggle(
