@@ -765,14 +765,19 @@ max-height: 85vh;
 }
 
     .word b {
-  color: #555;
-  transition: .3s ease;
+  color: transparent;
+  opacity: 0;
+  transition: .5s ease;
   display: inline-block;
+  transform: translateY(30px) scale(.8);
+  -webkit-text-stroke: 1px #555;
 }
 
 .word b.active {
-  transform: translateY(-8px) scale(1.15);
-  text-shadow: 0 0 15px currentColor;
+  opacity: 1;
+  transform: translateY(0) scale(1.15);
+  -webkit-text-stroke: 0;
+  text-shadow: 0 0 25px currentColor;
 }
     
 @media (max-width: 800px) {
