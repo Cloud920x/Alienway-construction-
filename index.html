@@ -1351,34 +1351,38 @@ window.addEventListener('scroll', () => {
 
     const letters = word.querySelectorAll('b');
 
- let delay = 0;
+let start = 0;
+let end = 1;
 
 if (word.closest('.local-meter')) {
-  delay = 0;
+  start = 0;
+  end = 0.35;
 }
 
 if (word.closest('.professional-meter')) {
-  delay = 0.35;
+  start = 0.35;
+  end = 0.7;
 }
 
 if (word.closest('.quality-meter')) {
-  delay = 0.7;
+  start = 0.7;
+  end = 1;
 }
 
-let wordProgress = (progress - delay) / (1 - delay);
+let wordProgress = (progress - start) / (end - start);
 
 wordProgress = Math.max(0, Math.min(1, wordProgress));
 
 let activeLetters = Math.floor(wordProgress * letters.length);
 
-      letter.classList.toggle(
-        'active',
-        index < activeLetters
-      );
+letters.forEach((letter, index) => {
 
-    });
+  letter.classList.toggle(
+    'active',
+    index < activeLetters
+  );
 
-  });
+});
 
 });
     
