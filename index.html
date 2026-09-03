@@ -1245,28 +1245,31 @@ function closeService() {
   document.getElementById('service-modal').classList.remove('active');
 }
 
-    const trustWords = document.querySelectorAll('.word');
+    const trustSection = document.querySelector('.trust-section');
+const trustWords = document.querySelectorAll('.word');
 
 window.addEventListener('scroll', () => {
+
+  const sectionTop = trustSection.getBoundingClientRect().top;
+  const sectionHeight = trustSection.offsetHeight;
+  const screen = window.innerHeight;
+
+  let progress = (screen - sectionTop) / sectionHeight;
+
+  progress = Math.max(0, Math.min(1, progress));
 
   trustWords.forEach((word) => {
 
     const letters = word.querySelectorAll('b');
-    const box = word.getBoundingClientRect();
-
-    let progress = 1 - (box.top / window.innerHeight);
-
-    progress = Math.max(0, Math.min(1, progress));
 
     let activeLetters = Math.floor(progress * letters.length);
 
     letters.forEach((letter, index) => {
 
-      if (index < activeLetters) {
-        letter.classList.add('active');
-      } else {
-        letter.classList.remove('active');
-      }
+      letter.classList.toggle(
+        'active',
+        index < activeLetters
+      );
 
     });
 
