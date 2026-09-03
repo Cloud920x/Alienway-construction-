@@ -34,6 +34,23 @@
       align-items: center;
       border-bottom: 1px solid #292929;
     }
+
+    header {
+  transition: .3s ease;
+}
+
+header.big-header .brand-mark {
+  font-size: 40px;
+}
+
+header.big-header .brand-text strong {
+  font-size: 26px;
+}
+
+header.big-header .brand-text small {
+  font-size: 11px;
+}
+    
     .brand {
   display: flex;
   align-items: center;
@@ -897,7 +914,7 @@ max-height: 85vh;
 
 <body>
 
-<header>
+<header class="big-header">
   <div class="brand">
   <div class="brand-mark">A<span>W</span></div>
 
@@ -1262,6 +1279,18 @@ max-height: 85vh;
 
   <script>
   const whyBoxes = document.querySelectorAll('.why-box');
+
+    const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+
+  if (window.scrollY > 80) {
+    header.classList.remove('big-header');
+  } else {
+    header.classList.add('big-header');
+  }
+
+});
 
   const whyObserver = new IntersectionObserver((entries) => {
     
