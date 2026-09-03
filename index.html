@@ -36,8 +36,8 @@
     }
 
     header {
-  transition: .3s ease;
-}
+  transition: all .5s cubic-bezier(.22,1,.36,1);
+    }
 
 header.big-header .brand-mark {
   font-size: 40px;
@@ -64,6 +64,10 @@ header.big-header .brand-text small {
   line-height: 1;
 }
 
+    .brand-mark {
+  transition: .5s cubic-bezier(.22,1,.36,1);
+    }
+
 .brand-mark span {
   color: white;
 }
@@ -79,12 +83,20 @@ header.big-header .brand-text small {
   letter-spacing: 2px;
 }
 
+    .brand-text strong {
+  transition: .5s cubic-bezier(.22,1,.36,1);
+    }
+
 .brand-text small {
   color: #f5b400;
   font-size: 9px;
   letter-spacing: 3px;
   margin-top: 5px;
 }
+
+    .brand-text small {
+  transition: .5s cubic-bezier(.22,1,.36,1);
+    }
 
 .gold {
   color: #f5b400;
