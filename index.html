@@ -1258,6 +1258,35 @@ window.addEventListener('scroll', () => {
   });
 
 });
+
+    const trustWords = document.querySelectorAll('.word');
+
+window.addEventListener('scroll', () => {
+
+  trustWords.forEach((word) => {
+
+    const letters = word.querySelectorAll('b');
+    const box = word.getBoundingClientRect();
+
+    let progress = 1 - (box.top / window.innerHeight);
+
+    progress = Math.max(0, Math.min(1, progress));
+
+    let activeLetters = Math.floor(progress * letters.length);
+
+    letters.forEach((letter, index) => {
+
+      if (index < activeLetters) {
+        letter.classList.add('active');
+      } else {
+        letter.classList.remove('active');
+      }
+
+    });
+
+  });
+
+});
     
   </script>
 
