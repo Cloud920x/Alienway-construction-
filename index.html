@@ -1309,9 +1309,11 @@ max-height: 85vh;
 
 window.addEventListener('scroll', () => {
 
-  if (window.scrollY > 80) {
+  if (window.scrollY > 150) {
     header.classList.remove('big-header');
-  } else {
+  }
+
+  if (window.scrollY < 80) {
     header.classList.add('big-header');
   }
 
