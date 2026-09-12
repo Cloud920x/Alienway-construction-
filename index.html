@@ -314,7 +314,7 @@ header.big-header .brand-text small {
     }
 
     .projects {
-      background: #121212;
+      background: #F5F7FA;
       max-width: none;
     }
 
@@ -343,12 +343,15 @@ header.big-header .brand-text small {
       transition: .3s;
     }
 
-    .project::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,.9));
-    }
+   .project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent,
+    rgba(15,23,42,.75)
+  );
+   }
 
     .project:hover {
   transform: scale(1.02);
@@ -367,7 +370,7 @@ header.big-header .brand-text small {
 
     .demo {
       display: inline-block;
-      color: #f5b400;
+      color: #00AEEF;
       font-size: 12px;
       font-weight: bold;
       letter-spacing: 2px;
