@@ -190,6 +190,30 @@ header.big-header .brand-text small {
     }
 
     .section-title {
+  font-size: clamp(42px, 7vw, 64px);
+  font-weight: 900;
+  text-align: center;
+  color: #111827;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  margin: 18px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00AEEF,
+    transparent
+  );
+  border-radius: 50px;
+}
+
+    .section-title {
       font-size: clamp(32px, 6vw, 48px);
       margin-bottom: 15px;
       line-height: 1.1;
